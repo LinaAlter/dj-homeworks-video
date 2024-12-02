@@ -13,5 +13,5 @@ class Phone(models.Model):
         return f'{self.name}; {self.price}; {self.image}; {self.release_date}; {self.lte_exists}; {self.slug}'
     
     def save(self,  *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.name)
         return super(Phone, self).save(*args, **kwargs)
